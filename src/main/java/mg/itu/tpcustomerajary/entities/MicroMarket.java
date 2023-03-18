@@ -114,7 +114,7 @@ public class MicroMarket implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mbelo.tpcustomer.entities.MicroMarket[ zipCode=" + zipCode + " ]";
+        return "mg.itu.tpcustomerajary.entities.MicroMarket[ zipCode=" + zipCode + " ]";
     }
 
 }

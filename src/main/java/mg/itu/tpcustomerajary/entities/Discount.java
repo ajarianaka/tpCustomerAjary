@@ -93,7 +93,7 @@ public class Discount implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mbelo.tpcustomer.entities.Discount[ code=" + code + " ]";
+        return "mg.itu.tpcustomerajary.entities.Discount[ code=" + code + " ]";
     }
 
 }
