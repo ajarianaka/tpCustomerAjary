@@ -5,15 +5,15 @@
 package mg.itu.tpcustomerajary.entities;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import jakarta.persistence.Basic;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Table;
 
 /**
  *
@@ -60,7 +60,7 @@ public class Customer implements Serializable {
     private Integer creditLimit;
     @JoinColumn(name = "DISCOUNT_CODE", referencedColumnName = "CODE")
     @ManyToOne(optional = false)
-    private Discount discount;
+    private Discount discountCode;
     @JoinColumn(name = "ZIP", referencedColumnName = "ZIP_CODE")
     @ManyToOne(optional = false)
     private MicroMarket zip;
@@ -153,11 +153,11 @@ public class Customer implements Serializable {
     }
 
     public Discount getDiscount() {
-        return discount;
+        return discountCode;
     }
 
     public void setDiscount(Discount discountCode) {
-        this.discount = discountCode;
+        this.discountCode = discountCode;
     }
 
     public MicroMarket getZip() {
@@ -190,7 +190,7 @@ public class Customer implements Serializable {
 
     @Override
     public String toString() {
-        return "mg.itu.tpcustomerAjary.entities.Customer[ customerId=" + customerId + " ]";
+        return "mg.itu.tpcustomerajary.entities.Customer[ customerId=" + customerId + " ]";
     }
-
+    
 }

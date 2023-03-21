@@ -7,15 +7,15 @@ package mg.itu.tpcustomerajary.entities;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import jakarta.persistence.Basic;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 /**
  *
@@ -37,7 +37,7 @@ public class Discount implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "RATE")
     private BigDecimal rate;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "discount")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "discountCode")
     private Collection<Customer> customerCollection;
 
     public Discount() {
@@ -95,5 +95,5 @@ public class Discount implements Serializable {
     public String toString() {
         return "mg.itu.tpcustomerajary.entities.Discount[ code=" + code + " ]";
     }
-
+    
 }
