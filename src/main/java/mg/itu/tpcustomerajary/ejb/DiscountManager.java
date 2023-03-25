@@ -4,41 +4,32 @@
  */
 package mg.itu.tpcustomerajary.ejb;
 
-import mg.itu.tpcustomerajary.entities.Customer;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
-import java.util.List;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
+import java.util.List;
+import mg.itu.tpcustomerajary.entities.Discount;
 
 /**
  *
  * @author ajari
  */
-
-/**
- * Gère la persistance des Customers.
- */
 @Stateless
-public class CustomerManager {
-
+public class DiscountManager {
     @PersistenceContext(unitName = "customerPU")
     private EntityManager em;
 
-    public void persist(Customer customer) {
-        em.persist(customer);
+    public void persist(Discount discount) {
+        em.persist(discount);
     }
-
-    public List<Customer> getAllCustomers() {
-        Query query = em.createNamedQuery("Customer.findAll");
+    
+    public List<Discount> getAllDiscounts() {
+        Query query = em.createNamedQuery("Discount.findAll");
         return query.getResultList();
     }
 
-    public Customer update(Customer customer) {
-        return em.merge(customer);
-    }
-    
-    public Customer findById(int idCustomer){
-        return em.find(Customer.class, idCustomer); 
+    public Discount findById(String code) {
+        return em.find(Discount.class, code);
     }
 }
